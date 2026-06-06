@@ -7,25 +7,11 @@ import { ToastContainer } from "react-toastify";
 import Header from "../header/HeaderClient";
 import Footer from "../footer";
 import { ArrowUp } from "lucide-react";
-import { getListCategory } from '../../redux/categorySlice.js';
-import { useDispatch, useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
 
 function ClientLayout() {
-    const dispatch = useDispatch();
-    const { CategoryList, CategoryTotal } = useSelector((state) => state.category);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showScrollTop, setShowScrollTop] = useState(false);
     const location = useLocation();
-
-    // ================================================ INIT DATA ===========================================
-    useEffect(() => {
-        const fetchListCategory = async () => {
-            let res = await dispatch(getListCategory({ page: null, limit: null })).unwrap();
-        };
-
-        fetchListCategory();
-    }, []);
 
     const mainRef = useRef(null);
 
@@ -66,7 +52,6 @@ function ClientLayout() {
             <div className="flex flex-col h-full transition-all duration-300">
                 {/* Header */}
                 <Header
-                    categories={CategoryList}
                     isMobileMenuOpen={isMobileMenuOpen}
                     setIsMobileMenuOpen={setIsMobileMenuOpen}
                 />
