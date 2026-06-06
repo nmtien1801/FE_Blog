@@ -11,7 +11,7 @@ export default function Header({ isMobileMenuOpen, setIsMobileMenuOpen }) {
     { label: "About", path: "/gioi-thieu" },
     { 
       label: "Inspiration", 
-      path: "/trang-chu",
+      path: "/tin-tuc",
       subMenu: ["Hotel & Resort", "Food & Culture", "Travel Well", "Tip & Planning"] 
     },
     { label: "Contact", path: "/lien-he" },

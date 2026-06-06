@@ -6,6 +6,7 @@ import {
   travelCategories,
   mockVideos
 } from "./mockTravelData";
+import Tienich from "../components/Tienich";
 
 const CategoryLabels = ({ post }) => (
   <div className="mb-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
@@ -106,7 +107,7 @@ const SmallPost = ({ post }) => (
       </h4>
       <p className="mt-2 text-xs text-neutral-500">{post.date}</p>
       <p className="mt-2 text-[14px] leading-6 text-neutral-600 hidden md:block">
-        {post.content.length > 100 ? post.content.slice(0, 100) + "..." : post.content}
+        {post.description.length > 100 ? post.description.slice(0, 100) + "..." : post.description}
       </p>
     </div>
   </article>
@@ -330,72 +331,8 @@ export default function TrangChu() {
             </div>
           )}
         </div>
+        <Tienich listPosts={listPosts} travelCategories={travelCategories} />
 
-        <aside>
-          <section>
-            <SectionTitle>Popular This Week</SectionTitle>
-            <div className="flex flex-col gap-6 mb-10">
-              {/* Giả sử bạn có mảng popularPosts, hãy dùng map để render */}
-              {listPosts.slice(0, 3).map((post, index) => (
-                <article key={post.id} className="flex gap-4 items-start">
-                  {/* Số thứ tự đè lên ảnh */}
-                  <div className="relative flex-shrink-0">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-[100px] h-[100px] object-cover"
-                    />
-                    <div className="absolute -top-3 -left-3 flex h-7 w-7 items-center justify-center rounded-full bg-neutral-900 text-[12px] font-bold text-white shadow-lg">
-                      {index + 1}
-                    </div>
-                  </div>
-                  {/* Tiêu đề & Date */}
-                  <div className="min-w-0">
-                    <h4 className="font-serif text-[17px] font-semibold leading-snug text-neutral-950 hover:text-[#6eb48c] transition cursor-pointer">
-                      {post.title}
-                    </h4>
-                    <p className="mt-2 text-[12px] text-neutral-500">{post.date}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          {/* 2. SECTION: EXPLORE (Giữ nguyên phần của bạn) */}
-          <section>
-            <SectionTitle>Explore</SectionTitle>
-            <div className="grid grid-cols-2 gap-3">
-              {travelCategories.map((category) => (
-                <a
-                  key={category}
-                  href="#"
-                  className="border border-[#ececec] px-4 py-3 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-neutral-700 transition hover:border-[#6eb48c] hover:text-[#6eb48c]"
-                >
-                  {category}
-                </a>
-              ))}
-            </div>
-          </section>
-
-          <div className="mt-10 bg-neutral-950 p-7 text-white">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#6eb48c]">
-              Newsletter
-            </p>
-            <h3 className="mt-3 font-serif text-3xl font-semibold leading-tight">
-              Weekly travel inspiration for curious readers.
-            </h3>
-            <form className="mt-6 flex flex-col gap-3" onSubmit={(event) => event.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Email address"
-                className="h-12 bg-white px-4 text-sm text-neutral-950 outline-none"
-              />
-              <button className="h-12 bg-[#6eb48c] text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-white hover:text-neutral-950">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </aside>
       </section>
     </main>
   );

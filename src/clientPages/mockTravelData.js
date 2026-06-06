@@ -7,9 +7,6 @@ export const travelCategories = [
   "Photography",
 ];
 
-const wpImage = (file) =>
-  `https://soledaddemo.pencidesign.net/soledad-travel-magazine2/wp-content/uploads/sites/47/2024/03/${file}`;
-
 export const featuredPosts = [
   {
     id: 1,
@@ -17,7 +14,8 @@ export const featuredPosts = [
     category: "Tip & Planning",
     author: "Penci Design",
     date: "March 28, 2024",
-    image: wpImage("young-couple-car-trip-1170x780.jpg"),
+    image:
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1170&q=80",
     excerpt:
       "A hand-picked guide to immersive landscapes, memorable journeys, and once-in-a-lifetime travel moments.",
   },
@@ -27,7 +25,8 @@ export const featuredPosts = [
     category: "Food & Culture",
     author: "Penci Design",
     date: "March 28, 2024",
-    image: wpImage("couple-enjoying-food-restaurant-1-1170x780.jpg"),
+    image:
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1170&q=80",
     excerpt:
       "From night markets to chef-led tables, these cities turn every meal into part of the itinerary.",
   },
@@ -39,7 +38,8 @@ export const featuredPosts = [
     secondCategory: "News & Advice",
     author: "Penci Design",
     date: "March 28, 2024",
-    image: wpImage("peakpx-23-1170x780.jpg"),
+    image:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1170&q=80",
     excerpt:
       "The luxury train service, spearheaded by the Saudi Ministry of Tourism and the Saudi Railway Company, promises to redefine luxury travel in the region.",
   },
@@ -59,62 +59,62 @@ export const listPosts = [
     id: 4,
     title: "Eco-Tourism: Discovering Sustainable Travel Destinations",
     category: "Trip Ideas",
-    date: "March 28, 2024",
-    image: wpImage(
-      "side-view-woman-looking-through-binoculars-while-sitting-car-roof-against-sky-263x175.jpg",
-    ),
-    content:
+    image:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=600&q=80",
+    description:
       "The luxury train service, spearheaded by the Saudi Ministry of Tourism and the Saudi Railway Company, promises to redefine luxury travel in the region.",
+    date: "March 25, 2024",
   },
   {
     id: 5,
     title: "Cultural Immersion: Delving Deep into Local Traditions and Customs",
     category: "Trip Ideas",
-    date: "March 28, 2024",
-    image: wpImage(
-      "traveller-woman-sit-roof-top-tarp-car-drink-coffee-with-morning-sunrise-fog-263x175.jpg",
-    ),
-    content:
+    image:
+      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80",
+    description:
       "Immerse yourself in the rich cultural tapestry of this vibrant destination and create unforgettable memories.",
+    date: "March 25, 2024",
   },
   {
     id: 6,
     title: "The Cayman Cookout: A Star-Studded Culinary Beach Party Experience",
     category: "Food & Culture",
-    date: "March 26, 2024",
-    image: wpImage("people-eating-seaweed-snacks-263x175.jpg"),
-    content:
+    image:
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+    description:
       "Join us for an unforgettable evening of delicious cuisine and live entertainment at the Cayman Cookout.",
+    date: "March 25, 2024",
   },
   {
     id: 7,
     title:
       "Experience Luxury at Four Seasons Hotel, Surf Club, Surfside, Florida",
     category: "Destination",
-    date: "March 25, 2024",
-    image: wpImage("Frame-3761.jpg"),
-    content:
+    image:
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+    description:
       "Indulge in the ultimate luxury experience at the Four Seasons Hotel, where every detail is crafted to perfection.",
+    date: "March 25, 2024",
   },
   {
     id: 8,
     title: "How to Plan the Perfect Hawaii Honeymoon, According to Experts",
     category: "News & Advice",
-    date: "March 24, 2024",
-    image: wpImage("beautiful-day-palau-royal-resort-263x175.jpg"),
-    content:
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+    description:
       "Discover the perfect balance of relaxation and adventure in this tropical paradise.",
+    date: "March 25, 2024",
   },
   {
     id: 9,
     title: "50 Best Honeymoon Destinations Around the World",
     category: "Destination",
-    date: "March 22, 2024",
-    image: wpImage(
-      "beautiful-shot-small-village-surrounded-by-lake-snowy-hills-1-263x175.jpg",
-    ),
-    content:
+    image:
+      "https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?auto=format&fit=crop&w=600&q=80",
+    description:
       "From secluded islands to bustling cities, find your dream honeymoon destination.",
+    date: "March 25, 2024",
   },
 ];
 
@@ -125,7 +125,7 @@ export const mockVideos = [
     duration: "23:13",
     thumbnail:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&auto=format&fit=crop&q=60",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Thay bằng link video thực tế của bạn
+    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
     id: 2,
@@ -166,14 +166,6 @@ export const mockVideos = [
     thumbnail:
       "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=300&auto=format&fit=crop&q=60",
     embedUrl: "",
-  },
-  {
-    id: 7,
-    title: "[4K] Hawaii 🇺🇸 | The BEST DAY TO VISIT WAIKIKI!...",
-    duration: "23:13",
-    thumbnail:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&auto=format&fit=crop&q=60",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Thay bằng link video thực tế của bạn
   },
 ];
 

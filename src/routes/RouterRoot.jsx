@@ -28,14 +28,13 @@ import { GetAccount } from "../redux/authSlice";
 import Cookies from "js-cookie";
 
 import Home from "../clientPages/TrangChu.jsx";
+import PostCategory from "../clientPages/DanhMucBaiViet.jsx";
 import About from "../clientPages/GioiThieu.jsx";
 import Service from "../clientPages/dichVu/DichVu.jsx";
 import ServiceLive from "../clientPages/dichVu/DvLiveStream.jsx";
 import ServiceTone from "../clientPages/dichVu/DvAutoTone.jsx";
 import Contact from "../clientPages/LienHe.jsx";
-import JobDetail from '../components/hire/JobDetail';
 import PostDetail from '../components/post/postDetail.jsx'
-import ProductPageHandler from '../components/product/ProductPageHandler.jsx'
 import PaymentMomoPage from '../clientPages/payment/PaymentMomoPage.jsx'
 import PaymentVietQrPage from '../clientPages/payment/PaymentVietQrPage.jsx'
 
@@ -99,11 +98,12 @@ function RouterRoot() {
         <Route path="/" element={<ClientLayout />}>
           <Route index element={<Navigate to="trang-chu" replace />} />
           <Route path="trang-chu" element={<Home />} />
+          <Route path="tin-tuc" element={<PostCategory />} />
           <Route path="gioi-thieu" element={<About />} />
 
           {/* path route: /product/ */}
           {/* <Route path="/product/:id_category/:id_product" element={<ProductPageHandler />} />  */}
-          <Route path="/:name/:id_category/:id_product" element={<ProductPageHandler />} />
+          {/* <Route path="/:name/:id_category/:id_product" element={<ProductPageHandler />} /> */}
           <Route path="dich-vu" element={<Service />} />
           <Route path="dich-vu/set-up-phong-livestream" element={<ServiceLive />} />
           <Route path="dich-vu/phan-mem-auto-tone" element={<ServiceTone />} />
