@@ -257,7 +257,7 @@ export default function TrangChu() {
             </div>
 
             {/* PHẦN PLAYLIST BÊN PHẢI - Khu vực scroll */}
-            <div className="w-full md:w-[350px] flex flex-col h-[400px] md:h-full bg-[#1a1a1a]">
+            <div className="w-full md:w-[350px] flex flex-col h-[400px] md:h-full min-h-0 bg-[#1a1a1a]">
 
               {/* Header Playlist */}
               <div className="p-4 bg-[#1a1a1a] border-b border-neutral-800 flex justify-between items-center flex-shrink-0">
@@ -268,7 +268,7 @@ export default function TrangChu() {
               </div>
 
               {/* List cuộn - Sử dụng flex-1 và overflow-y-auto */}
-              <div className="flex-1 overflow-y-auto custom-scrollbar divide-y divide-neutral-800">
+              <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar divide-y divide-neutral-800">
                 {mockVideos.map((video, index) => {
                   const isSelected = activeVideo.id === video.id;
                   return (
