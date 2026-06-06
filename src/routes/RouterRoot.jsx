@@ -32,8 +32,6 @@ import About from "../clientPages/GioiThieu.jsx";
 import Service from "../clientPages/dichVu/DichVu.jsx";
 import ServiceLive from "../clientPages/dichVu/DvLiveStream.jsx";
 import ServiceTone from "../clientPages/dichVu/DvAutoTone.jsx";
-import News from "../clientPages/TinTuc.jsx";
-import Careers from "../clientPages/TuyenDung.jsx";
 import Contact from "../clientPages/LienHe.jsx";
 import JobDetail from '../components/hire/JobDetail';
 import PostDetail from '../components/post/postDetail.jsx'
@@ -109,10 +107,6 @@ function RouterRoot() {
           <Route path="dich-vu" element={<Service />} />
           <Route path="dich-vu/set-up-phong-livestream" element={<ServiceLive />} />
           <Route path="dich-vu/phan-mem-auto-tone" element={<ServiceTone />} />
-          <Route path="tin-tuc" element={<News />} />
-          <Route path="/tin-tuc/:title/:id" element={<PostDetail />} />
-          <Route path="tuyen-dung" element={<Careers />} />
-          <Route path="/tuyen-dung/:title/:id" element={<JobDetail />} />
           <Route path="lien-he" element={<Contact />} />
           <Route path="payment-momo" element={<PaymentMomoPage />} />
           <Route path="payment-vietqr" element={<PaymentVietQrPage />} />
