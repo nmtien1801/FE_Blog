@@ -7,6 +7,7 @@ import {
   mockVideos
 } from "./mockTravelData";
 import Tienich from "../components/Tienich";
+import { postDetailPath } from "../utils/constants.js";
 
 const CategoryLabels = ({ post }) => (
   <div className="mb-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
@@ -23,7 +24,7 @@ const CategoryLabels = ({ post }) => (
 
 const StandardPost = ({ post, large = false }) => (
   <article className="group text-center">
-    <a href="#" className="block overflow-hidden bg-neutral-100">
+    <a href={postDetailPath(post.category, post)} className="block overflow-hidden bg-neutral-100">
       <img
         src={post.image}
         alt={post.title}
@@ -37,7 +38,7 @@ const StandardPost = ({ post, large = false }) => (
         className={`mx-auto font-serif font-semibold leading-tight text-neutral-950 ${large ? "max-w-[650px] text-3xl md:text-[34px]" : "text-[24px]"
           }`}
       >
-        <a href="#" className="transition hover:text-[#6eb48c]">
+        <a href={postDetailPath(post.category, post)} className="transition hover:text-[#6eb48c]">
           {post.title}
         </a>
       </h2>
@@ -53,7 +54,7 @@ const StandardPost = ({ post, large = false }) => (
             {post.excerpt}
           </p>
           <a
-            href="#"
+            href={postDetailPath(post.category, post)}
             className="mt-6 inline-flex items-center border border-neutral-900 px-7 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-neutral-900 transition hover:border-[#6eb48c] hover:bg-[#6eb48c] hover:text-white"
           >
             Continue Reading
@@ -69,7 +70,7 @@ const SideList = () => (
     {sidePosts.map((title) => (
       <article key={title} className="border-b border-[#ececec] py-[15px] first:pt-0 last:border-b-0">
         <h4 className="font-serif text-[18px] font-semibold leading-snug text-neutral-950">
-          <a href="#" className="transition hover:text-[#6eb48c]">
+          <a href={postDetailPath(travelCategories[0], { title })} className="transition hover:text-[#6eb48c]">
             {title}
           </a>
         </h4>
@@ -93,7 +94,7 @@ const SectionTitle = ({ children }) => (
 const SmallPost = ({ post }) => (
   <article className="grid grid-cols-[118px_1fr] gap-5 border-b border-[#ececec] pb-6 md:grid-cols-[210px_1fr]">
     {/* Bọc ảnh trong div với kích thước cố định */}
-    <a href="#" className="block overflow-hidden bg-neutral-100 h-[78px] md:h-[140px]">
+    <a href={postDetailPath(post.category, post)} className="block overflow-hidden bg-neutral-100 h-[78px] md:h-[140px]">
       <img
         src={post.image}
         alt={post.title}
@@ -103,7 +104,9 @@ const SmallPost = ({ post }) => (
     <div>
       <span className="text-[11px] font-bold text-[#6eb48c] uppercase">{post.category}</span>
       <h4 className="mt-2 font-serif text-[20px] md:text-[22px] font-semibold leading-snug text-neutral-950">
-        <a href="#" className="transition hover:text-[#6eb48c]">{post.title}</a>
+        <a href={postDetailPath(post.category, post)} className="transition hover:text-[#6eb48c]">
+          {post.title}
+        </a>
       </h4>
       <p className="mt-2 text-xs text-neutral-500">{post.date}</p>
       <p className="mt-2 text-[14px] leading-6 text-neutral-600 hidden md:block">
@@ -220,7 +223,7 @@ export default function TrangChu() {
                     {/* Khung nội dung */}
                     <div className="flex flex-col pr-2">
                       <h4 className="font-serif text-[16px] font-semibold leading-[1.4] text-[#161616] line-clamp-2">
-                        <a href="#" className="hover:text-[#0497e0] transition-colors duration-200">
+                        <a href={postDetailPath(post.category, post)} className="hover:text-[#0497e0] transition-colors duration-200">
                           {post.title}
                         </a>
                       </h4>
