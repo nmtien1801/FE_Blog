@@ -99,6 +99,7 @@ function RouterRoot() {
           <Route index element={<Navigate to="trang-chu" replace />} />
           <Route path="trang-chu" element={<Home />} />
           <Route path="tin-tuc" element={<PostCategory />} />
+          <Route path="/tin-tuc/:name" element={<PostCategory />} /> 
           <Route path="gioi-thieu" element={<About />} />
 
           {/* path route: /product/ */}
