@@ -29,6 +29,7 @@ import Cookies from "js-cookie";
 
 import Home from "../clientPages/TrangChu.jsx";
 import PostCategory from "../clientPages/DanhMucBaiViet.jsx";
+import PostClientDetail from "../clientPages/ChiTietBaiViet.jsx";
 import About from "../clientPages/GioiThieu.jsx";
 import Service from "../clientPages/dichVu/DichVu.jsx";
 import ServiceLive from "../clientPages/dichVu/DvLiveStream.jsx";
@@ -99,6 +100,7 @@ function RouterRoot() {
           <Route index element={<Navigate to="trang-chu" replace />} />
           <Route path="trang-chu" element={<Home />} />
           <Route path="tin-tuc" element={<PostCategory />} />
+          <Route path="tin-tuc/:cat/:slug/:id" element={<PostClientDetail />} />
           <Route path="/tin-tuc/:name" element={<PostCategory />} /> 
           <Route path="gioi-thieu" element={<About />} />
 

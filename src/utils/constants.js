@@ -126,6 +126,9 @@ const slug = (text) => {
   );
 };
 
+const postDetailPath = (cat, post) =>
+  `/tin-tuc/${slug(cat)}/${slug(post.title)}/${post.id}`;
+
 export {
   TypeUserIDCons,
   typeCategory_obligatory,
@@ -139,4 +142,5 @@ export {
   arrayBufferToUrl,
   formatToInputDate,
   slug,
+  postDetailPath,
 };

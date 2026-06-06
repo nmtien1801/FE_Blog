@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { postDetailPath } from '../utils/constants';
 
 // Sub-component nội bộ phục vụ cho việc hiển thị tiêu đề các Block
 const SectionTitle = ({ children }) => (
@@ -27,7 +29,7 @@ export default function Sidebar({ listPosts = [], travelCategories = [] }) {
                 <SectionTitle>Popular This Week</SectionTitle>
                 <div className="flex flex-col gap-6">
                     {popularPosts.map((post, index) => (
-                        <article key={post.id || index} className="flex gap-4 items-start group">
+                        <Link key={post.id || index} to={postDetailPath(post.category, post)} className="flex gap-4 items-start group">
 
                             {/* Ảnh Thumbnail + Số Thứ Tự Đè Lên */}
                             <div className="relative flex-shrink-0 overflow-hidden">
@@ -49,7 +51,7 @@ export default function Sidebar({ listPosts = [], travelCategories = [] }) {
                                 <p className="mt-1.5 text-[12px] text-neutral-500">{post.date}</p>
                             </div>
 
-                        </article>
+                        </Link>
                     ))}
                 </div>
             </section>
